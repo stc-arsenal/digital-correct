@@ -1,35 +1,251 @@
-<!DOCTYPE html>
-<head>
+    <!DOCTYPE html>
+    <head>
+        <script src="https://static.speiyou.com/_cdn_/math-jax/1.0.24/mathjax.js"></script>
 
-</head>
+        <style>
+            @media print {
+                .choose{display: none;}
+            }
+            .line{
+                height: 25px;
+                border-bottom: solid #b9d9fe 4px;
+            }
+            body{
+                width: 789px;
+            }
+        </style>
 
-<body>
-    <input type="text" id="paperid" placeholder="输入试卷代码">
+<script src="https://static.speiyou.com/library/MathJax3.0/3.1.2/tex-svg-full.js" async=""></script>
+<style id="MJX-SVG-styles">
+    mjx-container[jax="SVG"] {
+      direction: ltr;
+    }
+    
+    mjx-container[jax="SVG"] > svg {
+      overflow: visible;
+    }
+    
+    mjx-container[jax="SVG"] > svg a {
+      fill: blue;
+      stroke: blue;
+    }
+    
+    mjx-assistive-mml {
+      position: absolute !important;
+      top: 0px;
+      left: 0px;
+      clip: rect(1px, 1px, 1px, 1px);
+      padding: 1px 0px 0px 0px !important;
+      border: 0px !important;
+      display: block !important;
+      width: auto !important;
+      overflow: hidden !important;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    mjx-assistive-mml[display="block"] {
+      width: 100% !important;
+    }
+    
+    mjx-container[jax="SVG"][display="true"] {
+      display: block;
+      text-align: center;
+      margin: 1em 0;
+    }
+    
+    mjx-container[jax="SVG"][display="true"][width="full"] {
+      display: flex;
+    }
+    
+    mjx-container[jax="SVG"][justify="left"] {
+      text-align: left;
+    }
+    
+    mjx-container[jax="SVG"][justify="right"] {
+      text-align: right;
+    }
+    
+    g[data-mml-node="merror"] > g {
+      fill: red;
+      stroke: red;
+    }
+    
+    g[data-mml-node="merror"] > rect[data-background] {
+      fill: yellow;
+      stroke: none;
+    }
+    
+    g[data-mml-node="mtable"] > line[data-line] {
+      stroke-width: 70px;
+      fill: none;
+    }
+    
+    g[data-mml-node="mtable"] > rect[data-frame] {
+      stroke-width: 70px;
+      fill: none;
+    }
+    
+    g[data-mml-node="mtable"] > .mjx-dashed {
+      stroke-dasharray: 140;
+    }
+    
+    g[data-mml-node="mtable"] > .mjx-dotted {
+      stroke-linecap: round;
+      stroke-dasharray: 0,140;
+    }
+    
+    g[data-mml-node="mtable"] > g > svg {
+      overflow: visible;
+    }
+    
+    [jax="SVG"] mjx-tool {
+      display: inline-block;
+      position: relative;
+      width: 0;
+      height: 0;
+    }
+    
+    [jax="SVG"] mjx-tool > mjx-tip {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    mjx-tool > mjx-tip {
+      display: inline-block;
+      padding: .2em;
+      border: 1px solid #888;
+      font-size: 70%;
+      background-color: #F8F8F8;
+      color: black;
+      box-shadow: 2px 2px 5px #AAAAAA;
+    }
+    
+    g[data-mml-node="maction"][data-toggle] {
+      cursor: pointer;
+    }
+    
+    mjx-status {
+      display: block;
+      position: fixed;
+      left: 1em;
+      bottom: 1em;
+      min-width: 25%;
+      padding: .2em .4em;
+      border: 1px solid #888;
+      font-size: 90%;
+      background-color: #F8F8F8;
+      color: black;
+    }
+    
+    foreignObject[data-mjx-xml] {
+      font-family: initial;
+      line-height: normal;
+      overflow: visible;
+    }
+    
+    .MathJax path {
+      stroke-width: 3;
+    }
+    </style>        
     <script>
-        var jiaoyanyunid = ""
-        var button2 = document.createElement("button");
-        button2.type = "button";
-        button2.className = "button button1";
-        button2.innerHTML = "提交";
-        var element224 = document.querySelector("body")
-        element224.appendChild(button2);
-        button2.addEventListener("click", post)
-        var inputValue = document.getElementById('paperid').value;
-        console.log()
+            var tihao = 1
+            var jiaoyanyunid = ""
+            var jiexiurl = "https://app-pub.jiaoyanyun.com/console-pub/v1/search/resource";
+            function getSelectedPaper() {
+                var radios = document.getElementsByName('options');
+                var number = document.getElementById('number');
+                for (var i = 0, length = radios.length; i < length; i++) {
+                    if (radios[i].checked) ;{
+                            if(number.value == "1") {jiaoyanyunid = "2bc57c4dd246401cbd1feff97e3ad034"}
+                            if(number.value == "2") {jiaoyanyunid = "17942bd2c17e4562a8dc660632839763"}
+                            if(number.value == "3") {jiaoyanyunid = "196b7deeca7f43f1ada0939ddd6d5176"}
+                            if(number.value == "4") {jiaoyanyunid = "8c36daf0a3754f369ce9d687c3424634"}
+                            if(number.value == "5") {jiaoyanyunid = "c935047534ab41f3b852fffeda6b07d0"}
+                            if(number.value == "6") {jiaoyanyunid = "230e9161bd1f4d2594efe4f0133b3f02"}
+                            if(number.value == "7") {jiaoyanyunid = "ae0cf50029ff4fec85b72a0c61908a16"}
+                            if(number.value == "8") {jiaoyanyunid = "6a5d5e893c4244e5ac0887d3a55167b9"}
+                            if(number.value == "9") {jiaoyanyunid = "fe8891e6c85f44d6bf21b3cf8bd68261"}
+                            if(number.value == "10") {jiaoyanyunid = "917950adc2374797887510524794244d"}
+                            if(number.value == "11") {jiaoyanyunid = "987152f50a094df6b587e3effa9c66db"}
+                            if(number.value == "12") {jiaoyanyunid = "0d97b2c2726a489aac0ee1fb64a2d0e5"}
+                            if(number.value == "13") {jiaoyanyunid = "60cc604836a84488ab414daccd86759b"}
+                            if(number.value == "14") {jiaoyanyunid = "5b63e2ddf67940c38c4a2711c4ee0fa7"}
+                            if(number.value == "15") {jiaoyanyunid = "ac7ac2f31aba4edd9eebbe2b41f13145"}
+                            if(number.value == "16") {jiaoyanyunid = "4d47128e57f642acad4afc26c2735d41"}
+                            if(number.value == "17") {jiaoyanyunid = "eacd7ecbb8214df7821b16f40babf45b"}
+                            if(number.value == "18") {jiaoyanyunid = "5b3b1a082a864ae1a08f66ed023ce539"}
+                            if(number.value == "19") {jiaoyanyunid = "81b4b5675f444eee8de1fead9c2b4ef1"}
+                        break;
+                    }
+                }
+                var data = {
+                        "keyword": jiaoyanyunid,
+                        "sources": [6],
+                        "orgId": 1,
+                        "page": 1,
+                        "page_size": 40,
+                        "periodId": 2,
+                        "subjectId": 2
+                    };
+                    var post = JSON.stringify(data);
 
-        if (inputValue == "AP01") {jiaoyanyunid = "1b6453f145984dcab7189c9e998e2ee4"}
-
-        var postcontent = {paperId: jiaoyanyunid}
-        var post23 = JSON.stringify(postcontent);
-        function post(){
-            var xhr = new XMLHttpRequest();
-                    xhr.open("POST", "https://hsjyresource.jiaoyanyun.com/halfScreen/exampaper/queryExamPaperElement", false);
+                var xhr = new XMLHttpRequest();
+                    xhr.open("POST", jiexiurl, false);
                     xhr.setRequestHeader("Content-Type", "application/json");
                     xhr.onload = function() {
                         var json = JSON.parse(this.responseText);
-                        console.log(json)
-                    }
-                    xhr.send(post23);
-        }
-    </script>
-</body>
+                        origin = json.data.question.list[0].content;
+                        analysis = json.data.question.list[0].analysis[0];
+                        var element0 = document.querySelector("body > div.content")
+                        var element1 = document.querySelector("body > div.analysis")
+                        element0.innerHTML += tihao +"."+ origin;
+                        element1.innerHTML += tihao +"."+ analysis;
+                        MathJax.typeset([element0]);
+                        MathJax.typeset([element1]);
+                        tihao = tihao + 1
+                    };
+                xhr.send(post);
+
+            }
+                </script>
+
+    </head>
+
+
+    <body>
+        <div class="choose">
+        <h3>选择试题</h3>
+        <form>
+            <input type="radio" id="option1" name="options" value="AP01">
+            <label for="option1">2022~2023学年青岛第二中学高一下学期期末数学试卷</label><br>
+
+            <input type="radio" id="option2" name="options" value="AP02">
+            <label for="option2">2022~2023学年山东济南高一下学期期末数学试卷</label><br>
+
+            <input type="radio" id="option3" name="options" value="AP03">
+            <label for="option3">2022~2023学年山东青岛黄岛区高一下学期期末数学试卷</label><br>
+
+            <input type="radio" id="option4" name="options" value="AP04">
+            <label for="option4">2022~2023学年青岛第九中学高一下学期期末数学试卷</label><br>
+
+        </form>
+        <h3>输入题号</h3>
+        <p><input type="text" id="number" placeholder="输入题号"></p>
+
+        <input type="button" onclick="getSelectedPaper()" value="提交">
+    </div>
+
+
+    <div class="line"></div>
+
+    <div class="content"></div>
+    <div class="line"></div>
+
+    <div class="analysis"></div>
+    </body>

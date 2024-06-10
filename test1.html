@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Radio Button Selection</title>
+<script>
+function getSelectedValue() {
+var radios = document.getElementsByName('options');
+for (var i = 0, length = radios.length; i < length; i++) {
+if (radios[i].checked) {
+    // do whatever you want with the checked radio
+    alert(radios[i].value);
+    // only one radio can be logically checked, don't check the rest
+    break;
+}
+}
+}
+</script>
+</head>
+<body>
+<form>
+    <input type="radio" id="option1" name="options" value="Option 1">
+    <label for="option1">Option 1</label><br>
+    <input type="radio" id="option2" name="options" value="Option 2">
+    <label for="option2">Option 2</label><br>
+    <input type="radio" id="option3" name="options" value="Option 3">
+    <label for="option3">Option 3</label><br>
+    <input type="radio" id="option4" name="options" value="Option 4">
+    <label for="option4">Option 4</label><br>
+    <input type="button" onclick="getSelectedValue()" value="Submit">
+</form>
+</body>
+</html>
